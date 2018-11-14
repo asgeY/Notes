@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.23.1" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hEB-RK-58N">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hEB-RK-58N">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.16.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -36,6 +36,7 @@
                                                     <rect key="frame" x="108" y="42.5" width="243" height="57"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="57" id="1sB-4p-pVQ"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="242.5" id="YnC-FG-fEh"/>
                                                         <constraint firstAttribute="width" secondItem="cug-gR-SIO" secondAttribute="height" multiplier="81:19" id="djz-N2-ZLt"/>
                                                         <constraint firstAttribute="width" constant="243" id="neg-9J-Xlc"/>
                                                     </constraints>
@@ -85,8 +86,6 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="descriptionLabel" destination="cug-gR-SIO" id="30B-Og-qzN"/>
-                                    <outlet property="noteImageView" destination="d84-7y-KIc" id="eFJ-uT-d5I"/>
                                     <outlet property="noteNameLabel" destination="ZOt-ei-Qgf" id="X7N-dy-mlD"/>
                                     <outlet property="shadowView" destination="uDB-eF-we7" id="xO5-D6-RGA"/>
                                     <segue destination="yCc-pc-uC6" kind="show" id="jZy-Ke-TxL"/>
@@ -114,7 +113,7 @@
         <!--NOTE DETAILS-->
         <scene sceneID="KQ0-lw-2W2">
             <objects>
-                <viewController id="yCc-pc-uC6" sceneMemberID="viewController">
+                <viewController id="yCc-pc-uC6" customClass="ViewController" customModule="Notes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DWy-0Q-MNV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -182,12 +181,30 @@
                         <viewLayoutGuide key="safeArea" id="bfZ-p7-I1O"/>
                     </view>
                     <navigationItem key="navigationItem" title="NOTE DETAILS" id="01l-8v-tMf">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="CPm-RQ-C8V"/>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="awa-wa-T1n"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="CPm-RQ-C8V">
+                            <connections>
+                                <action selector="cancel:" destination="yCc-pc-uC6" id="PSQ-4X-F4d"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="awa-wa-T1n">
+                            <connections>
+                                <action selector="saveButtonWasPressed:" destination="yCc-pc-uC6" id="kro-Zv-zpe"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="NoteNameLabel" destination="exp-QL-OSN" id="4Ns-AA-ppb"/>
+                        <outlet property="noteDescriptionLabel" destination="CLE-rc-32I" id="mEH-OM-p7s"/>
+                        <outlet property="noteImageView" destination="xUY-p9-10x" id="kGW-YL-vdn"/>
+                        <outlet property="noteImageViewView" destination="lTh-s6-hjP" id="eh4-d2-RzD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GTW-Yj-8iv" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="8ca-XZ-QQr"/>
+                <tapGestureRecognizer id="8ca-XZ-QQr">
+                    <connections>
+                        <action selector="pickImageButtonWasPressed:" destination="yCc-pc-uC6" id="JEH-Jm-7fJ"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1813.5999999999999" y="79.610194902548727"/>
         </scene>

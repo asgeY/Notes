@@ -63,12 +63,12 @@
 				E9D434DE21965CD3008A16EB /* AppDelegate.swift */,
 				E9D434F32196775C008A16EB /* noteTableViewController.swift */,
 				E9D434E021965CD3008A16EB /* ViewController.swift */,
+				E9D434F521968181008A16EB /* noteTableViewCell.swift */,
 				E9D434E221965CD3008A16EB /* Main.storyboard */,
 				E9D434E821965CD6008A16EB /* Assets.xcassets */,
 				E9D434EA21965CD6008A16EB /* LaunchScreen.storyboard */,
 				E9D434ED21965CD6008A16EB /* Info.plist */,
 				E9D434E521965CD3008A16EB /* Notes.xcdatamodeld */,
-				E9D434F521968181008A16EB /* noteTableViewCell.swift */,
 			);
 			path = Notes;
 			sourceTree = "<group>";

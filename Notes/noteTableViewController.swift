@@ -2,7 +2,7 @@
 //  noteTableViewController.swift
 //  Notes
 //
-//  Created by Asgedom Teklu on 11/9/18.
+//  Created by Asgedom Yohannes on 11/9/18.
 //  Copyright © 2018 Asgedom Y. All rights reserved.
 //
 
@@ -39,11 +39,11 @@ class noteTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "noteTableViewCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "noteTableViewCell", for: indexPath) as! noteTableViewCell
 
         // Configure the cell...
         let note : Note = notes[indexPath.row]
-        cell.configureCell(note: Note)
+        cell.configureCell (note: note)
         cell.backgroundColor = UIColor.clear
         return cell
     }
